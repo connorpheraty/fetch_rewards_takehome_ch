@@ -1,0 +1,48 @@
+brands:
+  materialization: table
+receipts:
+  materialization: table
+users:
+  materialization: table
+receipt_items:
+  materialization: table
+  depends_on:
+    - receipts
+
+question_1:
+  materialization: view
+  depends_on:
+      - receipts_items
+question_2:
+  materialization: view
+  depends_on:
+      - receipts_items
+question_3:
+  materialization: view
+  depends_on:
+      - receipts_items
+question_4:
+  materialization: view
+  depends_on:
+      - receipts_items
+question_5:
+  materialization: view
+  depends_on:
+      - receipts_items
+question_6:
+  materialization: view
+  depends_on:
+      - receipts_items
+
+data_quality_issue_1:
+  materialization: view
+  depends_on:
+      - receipts_items
+data_quality_issue_2:
+  materialization: view
+  depends_on:
+      - receipts_items
+data_quality_issue_3:
+  materialization: view
+  depends_on:
+      - receipts_items
