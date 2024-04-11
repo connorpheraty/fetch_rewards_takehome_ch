@@ -16,7 +16,7 @@ and accuracy of our data. Here's a brief overview of the data quality issues I'v
 
 (For more detail on the above items, please reference the reports [here](https://github.com/connorpheraty/fetch_rewards_takehome_ch/tree/main/3_data_quality_issues))
 
-To resolve these issues, I would need to know the following:
+In the interest of trying to resolve some of the issues, I was hoping you could help me answer a few questions:
 
 #### Do we have de-duplication logic in place for our base tables?
 
@@ -30,6 +30,7 @@ Related to this, it appears we are mixing staging and production data in our dat
 we should separate these environments to ensure that only production data is accessible to our analysts.
 
 #### Performance and Scaling Concerns:
+(I'm kind of shoe-horning this in here, but it was in the rubric)
 
 Given that Snowflake is a cloud-based data warehouse, we don't need to worry about provisioning servers and scaling up/down 
 infrastructure. However, in order to optimize costs, we should be mindful of data warehouse usage and query efficiency 
