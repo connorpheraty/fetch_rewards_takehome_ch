@@ -1,5 +1,5 @@
 """
-This is a bare-bones model deployment system that simply creates a DAG of models and their dependencies.
+This is a bare-bones model deployment system that creates a DAG of models and their dependencies.
 It is a simple way to deploy models in order. A system as basic as this would have loads of problems in a large-scale
 production environment (for starters it is single-threaded: SLOW), but it will suffice for a low-complexity coding assignment.
 """
