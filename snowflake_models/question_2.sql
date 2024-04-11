@@ -1,8 +1,3 @@
--- Question 2: How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
--- Answer:
-    -- Recent Month: 1. BRAND, 2. MISSION, 3. VIVA
-    -- Previous Month: 1. BEN AND JERRYS, 2. FOLGERS, 3. PEPSI, 4. KELLOGG'S, 5. KRAFT
-
 WITH cte_max_date AS (
     SELECT MAX(date_scanned) AS max_date_scanned
     FROM FETCH_CH_TAKEHOME.REPORTING.RECEIPTS

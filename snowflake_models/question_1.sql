@@ -1,7 +1,3 @@
--- Question 1: What are the top 5 brands by receipts scanned for most recent month?
--- Answer: 1. Brand (test data?), 2. Mission, 3. VIVA
--- The vast majority of receipts scanned in the month prior to the latest record in the dataset are NULL.
-
 -- Get latest scanned date in the dataset
 WITH cte_max_date AS (
     SELECT MAX(date_scanned) AS max_date_scanned

@@ -1,21 +1,14 @@
--- Question 3: When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
--- Answer: According to the dataset, there are five possible values for rewardsReceiptStatus: 'SUBMITTED', 'FLAGGED', 'FINISHED', 'PENDING', 'REJECTED'.
--- To answer this question we are going to assume that the 'Accepted' status is 'FINISHED' and 'Rejected' status is 'REJECTED'.
--- Therefore, the correct answer is FINISHED with an average spend of 80.85.
-
-with cte_grouped as (
-    select
-        count(*) count,
-        sum(total_spent) total_spent,
-        rewards_receipt_status
-    from FETCH_CH_TAKEHOME.REPORTING.RECEIPTS
-    -- Filter out statuses that are not 'Finished' or 'Rejected'
-    where rewards_receipt_status in ('REJECTED', 'FINISHED')
-    group by rewards_receipt_status
-)
-select
-    DIV0(total_spent, count)::decimal(10,2) avg_spend_receipt_status,
+WITH cte_grouped AS (
+  SELECT
+    COUNT(*) AS count, -- Using count(*) since there are no other columns at the items grain that are fully populated
+    SUM(total_spent) AS total_spent,
     rewards_receipt_status
-from cte_grouped
-order by avg_spend_receipt_status desc
-;
+  FROM FETCH_CH_TAKEHOME.REPORTING.RECEIPTS
+  WHERE rewards_receipt_status IN ('REJECTED', 'FINISHED')
+  GROUP BY rewards_receipt_status
+)
+SELECT
+  DIV0(total_spent, count)::DECIMAL(10, 2) AS avg_spend_receipt_status,
+  rewards_receipt_status
+FROM cte_grouped
+ORDER BY avg_spend_receipt_status DESC;

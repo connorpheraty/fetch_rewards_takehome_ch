@@ -1,6 +1,3 @@
--- Question 5: Which brand has the most spend among users who were created within the past 6 months?
--- Answer: BEN AND JERRY'S with $2,149.45
-
 -- Find latest created_date in user table
 WITH cte_max_date AS (
   SELECT MAX(created_date) AS max_created_date

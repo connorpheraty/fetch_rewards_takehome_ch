@@ -1,6 +1,3 @@
--- Question 6: Which brand has the most transactions among users who were created within the past 6 months?
--- Answer: HY-VEE with 291 transactions
-
 -- Find latest created_date in user table
 WITH cte_max_date AS (
   SELECT MAX(created_date) AS max_created_date
