@@ -14,6 +14,11 @@ def ingest_local_files(db_name: str, schema_name: str, table_name: str):
     cur = init_cursor(db_name, schema_name)
     try:
         # This cache check is overkill for this coding assignment but you get the idea
+        if not ingestion_cache.check(db_name):
+            cur.execute(ssql.create_database(db_name))
+            ingestion_cache.add(db_name)
+            print(f"Created database {db_name}")
+
         if not ingestion_cache.check(schema_name):
             cur.execute(ssql.create_schema(db_name, schema_name))
             ingestion_cache.add(schema_name)
