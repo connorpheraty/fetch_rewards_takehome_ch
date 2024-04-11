@@ -1,7 +1,8 @@
 SELECT
     -- Receipt and User Identifiers
-    r.receipt_id,
-    r.user_id,
+    CONCAT(r.receipt_id::STRING, '-', i.value:partnerItemId::STRING) AS receipt_item_id, --Composite PK
+    r.receipt_id, --fk
+    r.user_id, --fk
 
     -- Receipt Status
     r.rewards_receipt_status,
