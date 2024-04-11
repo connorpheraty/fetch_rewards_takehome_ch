@@ -44,7 +44,7 @@ def create_snowflake_object(db_name: str, schema_name: str, obj_name: str, obj_d
         CREATE OR REPLACE {materialization} {TARGET_DB}.{TARGET_SCHEMA}.{obj_name} AS
         {sql}
     """)
-    print(f"Creating {obj_details['materialization']} {obj_name}")
+    print(f"Creating {obj_details['materialization']} {obj_name.upper()}")
 
 
 def deploy_models(sorted_objects, data):
