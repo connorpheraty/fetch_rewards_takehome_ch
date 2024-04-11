@@ -24,7 +24,7 @@ def ingest_local_files(db_name: str, schema_name: str, table_name: str):
             ingestion_cache.add(schema_name, table_name)
             print(f"Created table {db_name}.{schema_name}.{table_name}")
 
-        stage_name = f"{schema_name}_stage"
+        stage_name = f"{schema_name}_STAGE"
         if not ingestion_cache.check(stage_name):
             cur.execute(ssql.create_stage(db_name, schema_name, stage_name))
             ingestion_cache.add(stage_name)
@@ -41,5 +41,5 @@ def ingest_local_files(db_name: str, schema_name: str, table_name: str):
 if __name__ == "__main__":
     # Iterate through raw data directory for files
     for file in os.listdir(RAW_DATA_DIR):
-        table_name = file.split(".")[0]
+        table_name = file.split(".")[0].upper()
         ingest_local_files(TARGET_DB, TARGET_SCHEMA, table_name)
