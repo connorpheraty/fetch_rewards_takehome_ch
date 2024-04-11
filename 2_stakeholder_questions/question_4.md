@@ -12,7 +12,7 @@ SELECT * FROM FETCH_CH_TAKEHOME.REPORTING.QUESTION_4;
 
 The correct answer is `FINISHED` with a total of 5918 items purchased.
 
-| TOTAL_ITEMS | REWARDS_RECEIT_STATUS |
-|-------------|-----------------------|
-| 5918        | FINISHED              |
-| 164         | REJECTED              |
+| TOTAL_ITEMS | REWARDS_RECEIPT_STATUS |
+|-------------|------------------------|
+| 5918        | FINISHED               |
+| 164         | REJECTED               |
