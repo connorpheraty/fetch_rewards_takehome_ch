@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo contains the requirements enumerated in the Fetch Coding Exercise.
+This repo contains the requirements enumerated in the Fetch Coding Exercise:
 
 1. [Relational Model](https://github.com/connorpheraty/fetch_rewards_takehome_ch/tree/main/1_relational_model)
 2. [Stakeholder Questions](https://github.com/connorpheraty/fetch_rewards_takehome_ch/tree/main/2_stakeholder_questions)
