@@ -1,7 +1,7 @@
 """
-This is a bare-bones model deployment system that creates a DAG of models and their dependencies.
+This is a lightweight model deployment system that creates a DAG of models and their dependencies.
 It is a simple way to deploy models in order. A system as basic as this would have loads of problems in a large-scale
-production environment (for starters it is single-threaded: SLOW), but it will suffice for a low-complexity coding assignment.
+production environment (for starters it is single-threaded: SLOW), but it will suffice for a low-complexity coding challenge.
 """
 
 import yaml
@@ -33,18 +33,21 @@ def create_snowflake_object(db_name: str, schema_name: str, obj_name: str, obj_d
     """Create snowflake object from SQL model."""
     cur = init_cursor(db_name, schema_name)
 
-    # Reuse cache check from ingestion
-    if not ingestion_cache.check(schema_name):
-        cur.execute(f"CREATE SCHEMA IF NOT EXISTS {db_name}.{schema_name};")
-        ingestion_cache.add(schema_name)
-        print(f"Created schema {db_name}.{schema_name}")
+    try:
+        # Reuse cache check from ingestion
+        if not ingestion_cache.check(schema_name):
+            cur.execute(f"CREATE SCHEMA IF NOT EXISTS {db_name}.{schema_name};")
+            ingestion_cache.add(schema_name)
+            print(f"Created schema {db_name}.{schema_name}")
 
-    materialization = obj_details['materialization'].upper()
-    cur.execute(f"""
-        CREATE OR REPLACE {materialization} {TARGET_DB}.{TARGET_SCHEMA}.{obj_name} AS
-        {sql}
-    """)
-    print(f"Creating {obj_details['materialization']} {obj_name.upper()}")
+        materialization = obj_details['materialization'].upper()
+        cur.execute(f"""
+            CREATE OR REPLACE {materialization} {TARGET_DB}.{TARGET_SCHEMA}.{obj_name} AS
+            {sql}
+        """)
+        print(f"Creating {obj_details['materialization']} {obj_name.upper()}")
+    except Exception as e:
+        print(f"Error creating {obj_name.upper()}: {e}")
 
 
 def deploy_models(sorted_objects, data):
