@@ -1,7 +1,7 @@
 SELECT
     -- Receipt and User Identifiers
-    raw_json:_id:"$oid"::string AS receipt_id,
-    raw_json:userId::string AS user_id,
+    raw_json:_id:"$oid"::string AS receipt_id, -- pk
+    raw_json:userId::string AS user_id, --fk to users table
 
     -- Receipt Status
     raw_json:rewardsReceiptStatus::string AS rewards_receipt_status,
@@ -22,11 +22,7 @@ SELECT
     raw_json:bonusPointsEarnedReason::string AS bonus_points_earned_reason,
 
     -- Receipt Items
-    raw_json:rewardsReceiptItemList AS rewards_receipt_item_list,
+    raw_json:rewardsReceiptItemList AS rewards_receipt_item_list
 
-    -- Raw Receipt Data (JSON)
-    raw_json
-FROM
-    fetch_ch_takehome.ingestion.receipts
-QUALIFY
-    row_number() OVER (PARTITION BY raw_json:_id:"$oid" ORDER BY _load_time DESC) = 1;
+FROM fetch_ch_takehome.ingestion.receipts
+QUALIFY row_number() OVER (PARTITION BY raw_json:_id:"$oid" ORDER BY _load_time DESC) = 1;

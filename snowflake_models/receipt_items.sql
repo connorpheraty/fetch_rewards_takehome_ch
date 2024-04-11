@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     -- Receipt and User Identifiers
     r.receipt_id,
     r.user_id,
@@ -54,10 +54,7 @@ SELECT
     i.value:preventTargetGapPoints::BOOLEAN AS prevent_target_gap_points,
 
     -- Status Flags
-    i.value:deleted::BOOLEAN AS deleted,
-
-    -- Raw Receipt Data (JSON)
-    r.raw_json
+    i.value:deleted::BOOLEAN AS deleted
 
 FROM fetch_ch_takehome.reporting.receipts AS r,
 LATERAL FLATTEN(input => r.rewards_receipt_item_list) AS i
