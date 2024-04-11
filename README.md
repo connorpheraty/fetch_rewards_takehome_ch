@@ -28,8 +28,8 @@ To run the code in this repo, you'll need:
 ## Data Ingestion & Model Deployment
 
 Please run the following python executable files in the order specified below:
-1. `ingestion.py`
-2. `deploy_models.py`
+1. `ingestion/ingestion.py`
+2. `snowflake_models/deploy_models.py`
 
 **Note**: I am assuming that you will have a role attached to your Snowflake user that has the necessary permissions
 to create databases, schemas, objects, and stages and also select from said objects.
