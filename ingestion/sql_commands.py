@@ -1,5 +1,9 @@
 
 
+def create_database(db_name: str):
+    return f"CREATE DATABASE IF NOT EXISTS {db_name};"
+
+
 def create_schema(db_name: str, schema_name: str):
     return f"CREATE SCHEMA IF NOT EXISTS {db_name}.{schema_name};"
 
