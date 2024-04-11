@@ -1,6 +1,6 @@
 # Data Issue 1: Duplicates
 
-During my initial analysis of the raw data from the `users` raw json source, I identified a pretty sizeable amount of duplicates.
+During my initial analysis of the raw data from the `users` raw json source, I identified a pretty sizeable amount of duplicate records.
 I discovered this by using the window function below against the raw json data.
 
 ```sql

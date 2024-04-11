@@ -1,6 +1,6 @@
 # Data Issue 2: Test Data
 
-During my analysis of the brands data source, I quickly noticed test data was interspersed with the actual brand data:
+During my analysis of the brands data source, I noticed test data was interspersed with the production brand data:
 
 ```sql
 SELECT *
