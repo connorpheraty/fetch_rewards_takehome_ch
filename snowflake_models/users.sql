@@ -1,5 +1,5 @@
 SELECT
-    raw_json:_id:"$oid"::STRING AS user_id, -- pk, but use corrected field accessor
+    raw_json:_id:"$oid"::STRING AS user_id, -- pk
     raw_json:state::STRING AS state,
     (raw_json:createdDate:"$date"::INT / 1000)::TIMESTAMP_NTZ AS created_date,
     (raw_json:lastLogin:"$date"::INT / 1000)::TIMESTAMP_NTZ AS last_login,
