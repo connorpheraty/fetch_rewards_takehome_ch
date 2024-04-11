@@ -1,6 +1,6 @@
 WITH cte_grouped AS (
   SELECT
-    COUNT(*) AS count, -- Using count(*) since there are no other columns at the items grain that are fully populated
+    COUNT(*) AS count,
     SUM(total_spent) AS total_spent,
     rewards_receipt_status
   FROM FETCH_CH_TAKEHOME.REPORTING.RECEIPTS

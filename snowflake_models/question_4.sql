@@ -1,5 +1,5 @@
 SELECT
-    COUNT(*) AS total_items, -- Using count(*) since there are no other columns at the items grain that are fully populated
+    COUNT(*) AS total_items,
     rewards_receipt_status
 FROM FETCH_CH_TAKEHOME.REPORTING.RECEIPT_ITEMS
 WHERE rewards_receipt_status IN ('REJECTED', 'FINISHED')
