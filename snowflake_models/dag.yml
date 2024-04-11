@@ -33,16 +33,3 @@ question_6:
   materialization: view
   depends_on:
       - receipts_items
-
-data_quality_issue_1:
-  materialization: view
-  depends_on:
-      - receipts_items
-data_quality_issue_2:
-  materialization: view
-  depends_on:
-      - receipts_items
-data_quality_issue_3:
-  materialization: view
-  depends_on:
-      - receipts_items
