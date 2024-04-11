@@ -1,4 +1,4 @@
-# Question 1: What are the top 5 brands by receipts scanned for most recent month?
+## Question 1: What are the top 5 brands by receipts scanned for most recent month?
 
 I approached this problem by first identifying the latest record in the receipts dataset and filtering the data to only
 include receipts scanned in the month prior to this latest record. Please see the SQL query [here](https://github.com/connorpheraty/fetch_rewards_takehome_ch/blob/main/snowflake_models/question_1.sql).

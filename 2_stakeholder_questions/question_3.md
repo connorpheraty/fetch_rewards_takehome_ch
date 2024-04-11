@@ -1,4 +1,4 @@
-# Question 3: When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
+## Question 3: When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
 According to the dataset, there are five possible values for rewardsReceiptStatus: `SUBMITTED`, `FLAGGED`, `FINISHED`, `PENDING`, `REJECTED`.
 To answer this question, we will assume that the `Accepted` status is `FINISHED` and the `Rejected` status is `REJECTED`.

@@ -1,4 +1,4 @@
-# Question 5: Which brand has the most spend among users who were created within the past 6 months?
+## Question 5: Which brand has the most spend among users who were created within the past 6 months?
 
 Please see the underlying SQL query [here](https://github.com/connorpheraty/fetch_rewards_takehome_ch/blob/main/snowflake_models/question_5.sql)
 

@@ -1,4 +1,4 @@
-# Question 2: How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
+## Question 2: How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
 
 Similar to the previous problem, we are going to segregate the records in the most recent month and the month previous to
 the most recent month. Then we will rank the results in each group. 
