@@ -19,6 +19,7 @@ To run the code in this repo, you'll need:
 
 1. Python 3.9 or higher
 2. [Poetry](https://python-poetry.org/docs/#installation) for managing dependencies
+    - Once you have Poetry installed, run `poetry install` in the project root to install the dependencies
 3. A working Snowflake account with the following environment variables set in your shell or in a `.env` file in the root of this repo
     - `SNOWFLAKE_ACCOUNT`
     - `SNOWFLAKE_USER`
